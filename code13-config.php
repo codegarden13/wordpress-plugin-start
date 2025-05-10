@@ -12,4 +12,13 @@
  * @package         Code13_Config
  */
 
-// Your code starts here.
+
+
+// Allow SVG uploads.
+add_filter( 'upload_mimes', function( $mimes ) {
+	if ( current_user_can( 'administrator' ) ) {
+		$mimes['svg']  = 'image/svg+xml';
+		$mimes['svgz'] = 'image/svg+xml';
+	}
+	return $mimes;
+} );
