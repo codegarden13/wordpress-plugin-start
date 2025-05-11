@@ -14,6 +14,13 @@
 
 
 
+
+
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 // Allow SVG uploads.
 add_filter( 'upload_mimes', function( $mimes ) {
 	if ( current_user_can( 'administrator' ) ) {
